@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reservation',
@@ -26,6 +27,8 @@ export class ReservationComponent implements OnInit {
   onSubmit() {
     if (this.reservationForm.valid) {
       console.log(this.reservationForm.value);
+      Swal.fire("SweetAlert2 is working!");
+    
       
     } else {
  
