@@ -8,9 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ReservationComponent implements OnInit {
   reservationForm!: FormGroup;
-
+ 
   constructor(private fb: FormBuilder) {}
-
+ 
   ngOnInit(): void {
     this.reservationForm = this.fb.group({
       name: ['', Validators.required],
@@ -22,13 +22,13 @@ export class ReservationComponent implements OnInit {
       specialRequests: [''],
     });
   }
-
+ 
   onSubmit() {
     if (this.reservationForm.valid) {
       console.log(this.reservationForm.value);
-      // Here you would typically send the form data to a server
+      
     } else {
-      // Mark all fields as touched to trigger validation messages
+ 
       Object.keys(this.reservationForm.controls).forEach((key) => {
         const control = this.reservationForm.get(key);
         if (control) {
